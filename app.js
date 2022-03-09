@@ -2,7 +2,7 @@ const express = require('express');
 const multer = require('multer');
 const ejs = require('ejs');
 const path = require('path');
-
+const PORT = process.env.PORT || 3000
 // Set Storage Engine
 const storage = multer.diskStorage({
     destination: './public/uploads/',
@@ -84,6 +84,4 @@ app.post('/multiple', upload.array('images', 3), (req, res) => {
     console.log(req.files);
     res.send('multiple files uploaded');
 });
-const port = 3000;
-
-app.listen(port, () => console.log(`server started on port ${port}`));
+app.listen(PORT, () => console.log(`server started on port ${PORT}`));
