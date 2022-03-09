@@ -22,8 +22,6 @@ const upload = multer({
         checkFileType(file, cb);
     }
 });
-// used in traversy vid but not compatable with full stack junkie vid
-// }).single('myImage');
 
 // Check File type
 function checkFileType(file, cb) {
